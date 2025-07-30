@@ -1,0 +1,210 @@
+/* style.css */
+
+/* Reset dan Box Sizing untuk konsistensi */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Ganti font agar lebih modern */
+    line-height: 1.6;
+    background: #f0f2f5; /* Latar belakang lebih lembut */
+    color: #333;
+    min-height: 100vh; /* Pastikan body mengisi tinggi viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: #2c3e50; /* Warna gelap yang elegan */
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sedikit bayangan */
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2.8rem; /* Ukuran font lebih besar */
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #ecf0f1;
+}
+
+nav {
+    background: #34495e; /* Warna navigasi sedikit berbeda */
+    padding: 0.8rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky; /* Navigasi akan tetap di atas saat di-scroll */
+    top: 0;
+    z-index: 1000; /* Pastikan nav berada di atas elemen lain */
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block; /* Menggunakan inline-block untuk jarak yang lebih baik */
+    margin: 0 25px; /* Jarak antar item nav */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 5px 0;
+    transition: color 0.3s ease; /* Transisi halus saat hover */
+}
+
+nav a:hover, nav a.active {
+    color: #1abc9c; /* Warna hijau terang saat hover/aktif */
+}
+
+main {
+    flex: 1; /* Main content akan mengisi ruang yang tersedia */
+    padding: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Bayangan lebih jelas */
+    border-radius: 10px; /* Sudut lebih membulat */
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 25px;
+    border-bottom: 1px solid #e0e0e0; /* Garis pemisah lebih terang */
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+h2 {
+    color: #2c3e50;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after { /* Garis bawah estetis untuk judul */
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #1abc9c;
+    border-radius: 5px;
+}
+
+.project-item {
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek hover */
+}
+
+.project-item:hover {
+    transform: translateY(-5px); /* Sedikit naik saat di-hover */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15); /* Bayangan lebih kuat saat di-hover */
+}
+
+.project-item h3 {
+    color: #34495e;
+    margin-bottom: 10px;
+}
+
+.project-item p {
+    margin-bottom: 15px;
+}
+
+.project-item a {
+    display: inline-block;
+    background: #1abc9c; /* Warna tombol yang lebih menarik */
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.project-item a:hover {
+    background: #16a085;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #2c3e50;
+    color: #ecf0f1;
+    margin-top: auto; /* Footer akan selalu di bagian bawah */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
+
+/* Responsivitas - Media Queries */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    nav ul li {
+        margin: 0 15px;
+    }
+
+    main {
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav ul li {
+        display: block; /* Item nav menjadi vertikal */
+        margin: 10px 0;
+    }
+
+    main {
+        padding: 10px;
+        margin: 10px auto;
+    }
+
+    section {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+}
